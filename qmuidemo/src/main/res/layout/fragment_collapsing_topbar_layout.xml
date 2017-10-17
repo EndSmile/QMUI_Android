@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:qmui_collapsedTitleGravity="center"
+            app:qmui_collapsedTitleGravity="start"
             app:qmui_contentScrim="?attr/qmui_config_color_blue"
             app:qmui_expandedTitleGravity="center_horizontal|bottom"
             app:qmui_expandedTitleMarginBottom="20dp"

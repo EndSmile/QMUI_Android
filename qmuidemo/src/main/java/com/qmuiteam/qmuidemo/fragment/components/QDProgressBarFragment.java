@@ -37,6 +37,7 @@ public class QDProgressBarFragment extends BaseFragment {
 
     private QDItemDescription mQDItemDescription;
     private ProgressHandler myHandler = new ProgressHandler();
+    boolean isCircle = false;
 
     @Override
     protected View onCreateView() {
@@ -62,6 +63,10 @@ public class QDProgressBarFragment extends BaseFragment {
 
         myHandler.setProgressBar(mRectProgressBar, mCircleProgressBar);
 
+        mCircleProgressBar.setProgress(50);
+        mCircleProgressBar.setStrokeRoundCap(false);
+        mRectProgressBar.setProgress(50);
+
         mStartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +89,19 @@ public class QDProgressBarFragment extends BaseFragment {
                                 }
 
                             } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            try {
+                                Thread.sleep(500);
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        mCircleProgressBar.setStrokeRoundCap(isCircle);
+                                        mRectProgressBar.setStrokeRoundCap(isCircle);
+                                        isCircle = !isCircle;
+                                    }
+                                });
+                            } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                         }

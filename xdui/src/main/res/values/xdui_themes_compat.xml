@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="XDUI.Compat.NoActionBar" parent="QMUI.Compat.NoActionBar">
+        <item name="XDUISearchBarInputStyle">@style/SearchBarInput</item>
+        <item name="QMUITopBarStyle">@style/XDUI.TopBar</item>
+    </style>
+
+</resources>

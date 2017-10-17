@@ -69,6 +69,7 @@ public class QDCollapsingTopBarLayoutFragment extends BaseFragment {
             }
         });
 
+//        mTopBar.addRightTextButton(R.string.progress_back_button_text,R.id.topbar_right_about_button);
         mCollapsingTopBarLayout.setTitle(QDDataManager.getInstance().getDescription(this.getClass()).getName());
     }
 }

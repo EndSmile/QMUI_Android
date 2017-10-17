@@ -322,7 +322,7 @@ public class QMUITopBar extends RelativeLayout {
         }
     }
 
-    private LinearLayout makeSureTitleContainerView() {
+    protected LinearLayout makeSureTitleContainerView() {
         if (mTitleContainerView == null) {
             mTitleContainerView = new LinearLayout(getContext());
             // 垂直，后面要支持水平的话可以加个接口来设置
