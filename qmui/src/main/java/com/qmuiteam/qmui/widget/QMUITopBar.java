@@ -629,14 +629,14 @@ public class QMUITopBar extends RelativeLayout {
         return mTopbarHeight;
     }
 
-    private int getTopBarImageBtnWidth() {
+    protected int getTopBarImageBtnWidth() {
         if (mTopbarImageBtnWidth == -1) {
             mTopbarImageBtnWidth = QMUIResHelper.getAttrDimen(getContext(), R.attr.qmui_topbar_image_btn_height);
         }
         return mTopbarImageBtnWidth;
     }
 
-    private int getTopBarImageBtnHeight() {
+    protected int getTopBarImageBtnHeight() {
         if (mTopbarImageBtnHeight == -1) {
             mTopbarImageBtnHeight = QMUIResHelper.getAttrDimen(getContext(), R.attr.qmui_topbar_image_btn_height);
         }

@@ -1,66 +1,105 @@
 package com.xdja.xdui;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+
+import com.qmuiteam.qmui.alpha.QMUIAlphaImageButton;
+import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 
 /**
  * Created by ldy on 2017/10/9.
  */
 
-public class XDUISearchBarInput extends XDUITopBar {
+public class XDUISearchBarInput extends FrameLayout {
     private EditText edtSearchText;
-    private View leftLastView;
-    private View rightLastView;
+    private AppCompatImageView searchIcon;
+    private QMUIAlphaImageButton clearButton;
 
     public XDUISearchBarInput(@NonNull Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public XDUISearchBarInput(@NonNull Context context, @Nullable AttributeSet attrs) {
-        this(context,attrs,R.attr.XDUISearchBarInputStyle);
+        this(context, attrs, R.attr.XDUISearchBarInputStyle);
     }
 
     public XDUISearchBarInput(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        edtSearchText = new AppCompatEditText(context, attrs, defStyleAttr);
+
+        edtSearchText = new AppCompatEditText(context);
+        edtSearchText.setSingleLine();
+
         LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         edtSearchText.setLayoutParams(layoutParams);
-        setCenterView(edtSearchText);
+        addView(edtSearchText, layoutParams);
     }
 
-    public void addClearButton() {
-
+    public void setSearchIcon() {
+        if (searchIcon == null) {
+            searchIcon = new AppCompatImageView(getContext());
+            searchIcon.setImageResource(R.drawable.xdui_ic_search);
+            addView(searchIcon, getIconParams(true));
+        }
     }
 
-    @Override
-    public void addLeftView(View view, int viewId, LayoutParams layoutParams) {
-        super.addLeftView(view, viewId, layoutParams);
-        leftLastView = view;
+    public void setClearButton() {
+        if (clearButton == null) {
+            clearButton = new QMUIAlphaImageButton(getContext());
+            clearButton.setImageResource(R.drawable.xdui_ic_close);
+            clearButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (edtSearchText != null) {
+                        edtSearchText.setText("");
+                    }
+                }
+            });
+            addView(clearButton, getIconParams(false));
+        }
     }
 
-    @Override
-    public void addRightView(View view, int viewId, LayoutParams layoutParams) {
-        super.addRightView(view, viewId, layoutParams);
-        rightLastView = view;
+    @NonNull
+    private LayoutParams getIconParams(boolean isLeft) {
+        LayoutParams params = new LayoutParams(getIconWidth(), getIconHeight());
+
+        if (!isLeft) {
+            params.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
+        } else {
+            params.gravity = Gravity.CENTER_VERTICAL;
+        }
+        return params;
+    }
+
+    private int getIconHeight() {
+        return QMUIDisplayHelper.dp2px(getContext(), 14);
+    }
+
+    private int getIconWidth() {
+        return QMUIDisplayHelper.dp2px(getContext(), 14);
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
         int leftPadding = 0;
-        if (leftLastView != null) {
-            leftPadding = leftLastView.getLeft() + leftLastView.getWidth();
+        if (searchIcon != null) {
+            leftPadding = searchIcon.getLeft() + searchIcon.getWidth();
         }
         int rightPadding = 0;
-        if (rightLastView != null) {
-            rightPadding = getWidth() - rightLastView.getRight();
+        if (clearButton != null) {
+            rightPadding = getWidth() - clearButton.getLeft();
         }
         if (leftPadding != 0 || rightPadding != 0) {
             //通过设置

@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".basecomponent.SearchActivity" />
-        <activity android:name=".basecomponent.TopBarActivity"></activity>
+        <activity android:name=".basecomponent.TopBarActivity" />
+        <activity android:name=".basecomponent.DialogActivity"></activity>
     </application>
 
 </manifest>

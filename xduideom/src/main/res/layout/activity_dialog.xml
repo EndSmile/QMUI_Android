@@ -5,10 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.xdja.xduideom.basecomponent.SearchActivity">
+    tools:context="com.xdja.xduideom.basecomponent.DialogActivity">
 
-    <com.xdja.xdui.XDUISearchBar
-        android:id="@+id/searchBar"
+    <include layout="@layout/topbar" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="?attr/qmui_topbar_height" />
+        android:layout_height="wrap_content">
+
+        <com.xdja.xdui.XDUIGroupListView
+            android:id="@+id/groupList_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
 </LinearLayout>

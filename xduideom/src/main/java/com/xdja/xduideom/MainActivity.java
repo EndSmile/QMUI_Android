@@ -8,6 +8,8 @@ import android.view.View;
 import com.qmuiteam.qmui.widget.grouplist.QMUIGroupListView;
 import com.xdja.xdui.XDUIGroupListView;
 import com.xdja.xdui.XDUITopBar;
+import com.xdja.xduideom.basecomponent.DialogActivity;
+import com.xdja.xduideom.basecomponent.SearchActivity;
 import com.xdja.xduideom.basecomponent.TopBarActivity;
 
 import butterknife.BindView;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 .addItemView(groupList.createChevronItemView("搜索栏"), new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        startActivity(new Intent(MainActivity.this, SearchActivity.class));
                     }
                 })
                 .addItemView(groupList.createChevronItemView("标签栏"), new View.OnClickListener() {
@@ -51,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
+                    }
+                })
+                .addItemView(groupList.createChevronItemView("对话框"), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(MainActivity.this, DialogActivity.class));
                     }
                 })
                 .addItemView(groupList.createChevronItemView("Toast"), new View.OnClickListener() {

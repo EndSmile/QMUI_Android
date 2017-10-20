@@ -3,4 +3,6 @@
 
     <item name="xdui_topbar_item_right_more" type="id"/>
 
+    <item name="xdui_search_bar_clear" type="id"/>
+    <item name="xdui_search_bar_search" type="id"/>
 </resources>
