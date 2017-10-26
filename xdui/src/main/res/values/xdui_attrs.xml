@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="XDUISearchBarInput">
+    </declare-styleable>
+
     <attr name="XDUISearchBarInputStyle" format="reference"/>
+
+    <declare-styleable name="XDUISearchBar">
+        <attr name="xdui_search_bar_input_height" format="dimension"/>
+    </declare-styleable>
+
+    <attr name="XDUISearchBarStyle" format="reference"/>
 
 </resources>

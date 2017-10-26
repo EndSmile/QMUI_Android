@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="XDUI.Compat.NoActionBar" parent="QMUI.Compat.NoActionBar">
+    <style name="XDUI.Compat" parent="QMUI.Compat">
+        <item name="qmui_topbar_title_margin_horizontal_when_no_btn_aside">12dp</item>
+        <item name="qmui_topbar_title_container_padding_horizontal">4dp</item>
         <item name="XDUISearchBarInputStyle">@style/SearchBarInput</item>
         <item name="QMUITopBarStyle">@style/XDUI.TopBar</item>
+    </style>
+
+    <!-- 注意，与QMUI.NoActionBar不同，这里windowActionBar与windowNoTitle没有前缀android -->
+    <style name="XDUI.Compat.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>

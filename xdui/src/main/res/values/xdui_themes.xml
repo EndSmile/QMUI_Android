@@ -3,6 +3,8 @@
 
 
     <style name="XDUI" parent="QMUI">
+        <item name="qmui_topbar_title_margin_horizontal_when_no_btn_aside">0dp</item>
+        <item name="qmui_topbar_title_container_padding_horizontal">8dp</item>
     </style>
 
 </resources>

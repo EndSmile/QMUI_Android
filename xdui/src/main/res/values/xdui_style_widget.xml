@@ -3,10 +3,7 @@
 
 
     <!--********************* TopBar *********************-->
-    <style name="SearchBarInput" parent="QMUI.TopBar">
-        <item name="qmui_topbar_bg_color">@color/qmui_config_color_transparent</item>
-        <item name="qmui_topbar_need_separator">false</item>
-        <item name="qmui_topbar_height">36dp</item>
+    <style name="SearchBarInput">
     </style>
 
     <style name="XDUI.TopBar" parent="QMUI.TopBar">

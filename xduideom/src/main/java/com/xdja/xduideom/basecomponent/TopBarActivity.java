@@ -2,6 +2,7 @@ package com.xdja.xduideom.basecomponent;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
@@ -19,6 +20,9 @@ public class TopBarActivity extends AppCompatActivity {
 
     @BindView(R.id.topbar)
     XDUITopBar topbar;
+    @BindView(R.id.topbar_button)
+    XDUITopBar topbarButton;
+    boolean isLeft = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +52,38 @@ public class TopBarActivity extends AppCompatActivity {
                 qmuiListPopup.dismiss();
             }
         });
+        topbar.addRightImageButton(R.drawable.ic_switcher_net, R.id.switcher)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (isLeft) {
+                            topbar.setTitleGravity(Gravity.CENTER);
+                            topbarButton.setTitleGravity(Gravity.CENTER);
+                        } else {
+                            topbar.setTitleGravity(Gravity.LEFT);
+                            topbarButton.setTitleGravity(Gravity.LEFT);
+                        }
+                        isLeft = !isLeft;
+                    }
+                });
+
+        topbarButton.setTitle("按钮标题栏ddusfhihfihisuhfiuehfiuhsdifhiudsahifuahsdfhuids");
+//        topbarButton.addRightTextButton("完成", R.id.complete)
+//                .setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Toast.makeText(TopBarActivity.this, "完成", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+
+//        topbarButton.addLeftTextButton("取消", R.id.cancel)
+//                .setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Toast.makeText(TopBarActivity.this, "取消", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+
+
     }
 }

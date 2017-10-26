@@ -1,39 +1,41 @@
 package com.xdja.xdui;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.qmuiteam.qmui.alpha.QMUIAlphaImageButton;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 
 /**
  * Created by ldy on 2017/9/29.
+ *
+ * 拓展自{@link XDUITopBar}，相当于将其标题替换为搜索输入区域，所有和标题相关的设置操作均会报出异常
  */
 
 public class XDUISearchBar extends XDUITopBar {
 
-    private XDUISearchBarInput searchBarInput;
+    private final XDUISearchBarInput searchBarInput;
 
     public XDUISearchBar(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+        this(context, attrs, 0);
     }
 
     public XDUISearchBar(Context context) {
-        super(context);
-        init(context);
+        this(context, null);
     }
 
     public XDUISearchBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        init(context);
-    }
+        super.setTitleGravity(Gravity.LEFT);
 
-    private void init(Context context) {
-        setTitleGravity(Gravity.LEFT);
         searchBarInput = new XDUISearchBarInput(context);
         searchBarInput.setClearButton();
         searchBarInput.setSearchIcon();
@@ -41,8 +43,43 @@ public class XDUISearchBar extends XDUITopBar {
         makeSureTitleContainerView().addView(searchBarInput
                 , new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT
                         , QMUIDisplayHelper.dp2px(getContext(), 38)));
-//                        , ViewGroup.LayoutParams.WRAP_CONTENT));
+//                        , ViewGroup.LayoutParams.WRAP_CONTENT));    }
+
 
     }
 
+    @Override
+    public TextView setTitle(int resId) {
+        throw new UnsupportedOperationException("不支持此操作");
+    }
+
+    @Override
+    public TextView setTitle(String title) {
+        throw new UnsupportedOperationException("不支持此操作");
+    }
+
+    @Override
+    public TextView setEmojiTitle(String title) {
+        throw new UnsupportedOperationException("不支持此操作");
+    }
+
+    @Override
+    public void showTitleView(boolean toShow) {
+        throw new UnsupportedOperationException("不支持此操作");
+    }
+
+    @Override
+    public void setSubTitle(String subTitle) {
+        throw new UnsupportedOperationException("不支持此操作");
+    }
+
+    @Override
+    public void setSubTitle(int resId) {
+        throw new UnsupportedOperationException("不支持此操作");
+    }
+
+    @Override
+    public void setTitleGravity(int gravity) {
+        throw new UnsupportedOperationException("不支持此操作");
+    }
 }
