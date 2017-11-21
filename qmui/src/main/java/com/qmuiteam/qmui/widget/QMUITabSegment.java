@@ -1279,11 +1279,15 @@ public class QMUITabSegment extends HorizontalScrollView {
     public class InnerTextView extends TextView {
 
         public InnerTextView(Context context) {
-            super(context);
+            this(context,null);
         }
 
         public InnerTextView(Context context, AttributeSet attrs) {
-            super(context, attrs);
+            this(context, attrs,R.attr.QMUITabSegmentTextStyle);
+        }
+
+        public InnerTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+            super(context, attrs, defStyleAttr);
         }
 
         @Override

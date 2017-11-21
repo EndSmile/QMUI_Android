@@ -39,9 +39,9 @@ import java.util.List;
  */
 public class QMUITopBar extends RelativeLayout {
 
-    private static final int DEFAULT_VIEW_ID = -1;
-    private int mLeftLastViewId; // 左侧最右 view 的 id
-    private int mRightLastViewId; // 右侧最左 view 的 id
+    protected static final int DEFAULT_VIEW_ID = -1;
+    protected int mLeftLastViewId; // 左侧最右 view 的 id
+    protected int mRightLastViewId; // 右侧最左 view 的 id
 
     private View mCenterView; // 中间的 View
     private LinearLayout mTitleContainerView; // 包裹 title 和 subTitle 的容器
@@ -670,7 +670,8 @@ public class QMUITopBar extends RelativeLayout {
             for (int leftViewIndex = 0; leftViewIndex < mLeftViewList.size(); leftViewIndex++) {
                 View view = mLeftViewList.get(leftViewIndex);
                 if (view.getVisibility() != GONE) {
-                    leftViewWidth += view.getMeasuredWidth();
+                    LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
+                    leftViewWidth += layoutParams.leftMargin + view.getMeasuredWidth() + layoutParams.rightMargin;
                 }
             }
             // 计算右侧 View 的总宽度
@@ -678,7 +679,8 @@ public class QMUITopBar extends RelativeLayout {
             for (int rightViewIndex = 0; rightViewIndex < mRightViewList.size(); rightViewIndex++) {
                 View view = mRightViewList.get(rightViewIndex);
                 if (view.getVisibility() != GONE) {
-                    rightViewWidth += view.getMeasuredWidth();
+                    LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
+                    rightViewWidth += layoutParams.leftMargin + view.getMeasuredWidth() + layoutParams.rightMargin;
                 }
             }
             // 计算 titleContainer 的最大宽度
@@ -730,7 +732,8 @@ public class QMUITopBar extends RelativeLayout {
                 for (int leftViewIndex = 0; leftViewIndex < mLeftViewList.size(); leftViewIndex++) {
                     View view = mLeftViewList.get(leftViewIndex);
                     if (view.getVisibility() != GONE) {
-                        titleContainerViewLeft += view.getMeasuredWidth();
+                        LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
+                        titleContainerViewLeft += layoutParams.leftMargin + view.getMeasuredWidth() + layoutParams.rightMargin;
                     }
                 }
 

@@ -10,7 +10,7 @@ import com.xdja.xduideom.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchBarActivity extends AppCompatActivity {
 
     @BindView(R.id.searchBar)
     XDUISearchBar searchBar;

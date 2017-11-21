@@ -31,6 +31,7 @@
         <attr name="qmui_tab_typeface_provider" format="string"/>
     </declare-styleable>
     <attr name="QMUITabSegmentStyle" format="reference"/>
+    <attr name="QMUITabSegmentTextStyle" format="reference"/>
 
     <!--************** QMUIGroupListView **************-->
     <declare-styleable name="QMUIGroupListView">

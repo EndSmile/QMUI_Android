@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--TopBar-->
+    <attr name="xdui_topbar_text_button_edge_margin_horizontal" format="dimension"/>
+    <attr name="xdui_topbar_pop_background_shade_alpha" format="float"/>
+
+    <!--SearchBar-->
+    <attr name="xdui_searchbar_input_icon_margin_edge_hor" format="dimension"/>
+    <attr name="xdui_searchbar_input_margin_horizontal" format="dimension"/>
+</resources>

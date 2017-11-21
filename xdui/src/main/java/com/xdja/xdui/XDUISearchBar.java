@@ -3,14 +3,9 @@ package com.xdja.xdui;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.qmuiteam.qmui.alpha.QMUIAlphaImageButton;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 
 /**
@@ -24,7 +19,7 @@ public class XDUISearchBar extends XDUITopBar {
     private final XDUISearchBarInput searchBarInput;
 
     public XDUISearchBar(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        this(context, attrs, R.attr.QMUITopBarStyle);
     }
 
     public XDUISearchBar(Context context) {
@@ -42,7 +37,7 @@ public class XDUISearchBar extends XDUITopBar {
 
         makeSureTitleContainerView().addView(searchBarInput
                 , new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT
-                        , QMUIDisplayHelper.dp2px(getContext(), 38)));
+                        , QMUIDisplayHelper.dp2px(getContext(), 36)));
 //                        , ViewGroup.LayoutParams.WRAP_CONTENT));    }
 
 

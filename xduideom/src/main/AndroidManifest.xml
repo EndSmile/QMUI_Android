@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".basecomponent.SearchActivity" />
+        <activity android:name=".basecomponent.SearchBarActivity" />
         <activity android:name=".basecomponent.TopBarActivity" />
-        <activity android:name=".basecomponent.DialogActivity"></activity>
+        <activity android:name=".basecomponent.DialogActivity" />
+        <activity android:name=".basecomponent.LabelBarActivity"></activity>
     </application>
 
 </manifest>

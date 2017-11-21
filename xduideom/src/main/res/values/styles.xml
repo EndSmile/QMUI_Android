@@ -3,6 +3,11 @@
 
     <style name="AppTheme" parent="XDUI.Compat.NoActionBar">
         <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="QMUITabSegmentTextStyle">@style/TabSegmentPaddingText</item>
     </style>
 
+    <style name="TabSegmentPaddingText" parent="QMUI.TabSegmentText">
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+    </style>
 </resources>

@@ -250,6 +250,7 @@
         ***********************************************-->
         <item name="QMUIButtonStyle">@style/QMUI.RoundButton</item>
         <item name="QMUITabSegmentStyle">@style/QMUI.TabSegment</item>
+        <item name="QMUITabSegmentTextStyle">@style/QMUI.TabSegmentText</item>
         <item name="QMUIGroupListViewStyle">@style/QMUI.GroupListView</item>
         <item name="QMUICommonListItemViewStyle">@style/QMUI.CommonListItemView</item>
         <item name="QMUIGroupListSectionViewStyle">@style/QMUI.GroupListSectionView</item>
@@ -337,6 +338,5 @@
         <item name="android:dividerHeight">@dimen/qmui_list_divider_height</item>
         <item name="android:background">@color/qmui_config_color_white</item>
     </style>
-
 
 </resources>

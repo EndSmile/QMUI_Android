@@ -10,6 +10,10 @@
         <item name="qmui_tab_icon_position">left</item>
     </style>
 
+    <!--********************* TabSegmentText(选项卡中的文字) *********************-->
+    <style name="QMUI.TabSegmentText" parent="@style/TextView">
+    </style>
+
     <!--********************* Button *********************-->
     <style name="QMUI.RoundButton" parent="@style/Button">
         <item name="android:layout_width">wrap_content</item>

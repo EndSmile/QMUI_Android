@@ -17,4 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/qmui_topbar_height"
         android:layout_marginTop="8dp" />
+
+    <com.xdja.xdui.XDUITopBar
+        android:id="@+id/topbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        android:layout_marginTop="8dp" />
 </LinearLayout>

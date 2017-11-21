@@ -3,8 +3,19 @@
 
 
     <style name="XDUI" parent="QMUI">
-        <item name="qmui_topbar_title_margin_horizontal_when_no_btn_aside">0dp</item>
-        <item name="qmui_topbar_title_container_padding_horizontal">8dp</item>
+        <item name="XDUISearchBarInputStyle">@style/SearchBarInput</item>
+        <item name="QMUITopBarStyle">@style/XDUI.TopBar</item>
+
+        <!--TopBar-->
+        <item name="qmui_topbar_title_margin_horizontal_when_no_btn_aside">12dp</item>
+        <item name="qmui_topbar_title_container_padding_horizontal">4dp</item>
+        <item name="xdui_topbar_text_button_edge_margin_horizontal">4dp</item>
+        <item name="xdui_topbar_pop_background_shade_alpha">1</item>
+
+        <!--SearchBar-->
+        <item name="xdui_searchbar_input_icon_margin_edge_hor">6dp</item>
+        <item name="xdui_searchbar_input_margin_horizontal">8dp</item>
+
     </style>
 
 </resources>
